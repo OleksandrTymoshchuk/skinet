@@ -12,9 +12,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace API.Controllers
 {
-    [ApiController]
-    [Route("api/[controller]")]
-    public class ProductsController : ControllerBase
+    public class ProductsController : BaseApiController
     {
         private readonly IGenericRepository<Product> _productsRepo;
         private readonly IGenericRepository<ProductBrand> _productBrandsRepo;
@@ -43,6 +41,7 @@ namespace API.Controllers
     [HttpGet("{id}")]
     public async Task<ActionResult<ProductToReturnDto>> GetProduct(int id)
     {
+        var div = id / 0;
         var spec = new ProductsWithTypesAndBrandsSpecification(id);
 
         var product = await _productsRepo.GetEntityWithSpec(spec);
