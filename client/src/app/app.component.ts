@@ -10,16 +10,8 @@ import { HttpClient } from '@angular/common/http';
 })
 export class AppComponent implements OnInit{
   title = 'client';
-  products: IProduct[];
 
   constructor(private http: HttpClient) {}
 
-  ngOnInit(): void {
-    this.http.get('https://localhost:5001/api/products?pageSize=10&pageIndex=1')
-      .subscribe((response: IPagination) => {
-        this.products = response.data;
-      }, error => {
-        console.log(error);
-      });
-  }
+  ngOnInit(): void {}
 }

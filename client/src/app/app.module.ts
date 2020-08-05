@@ -1,3 +1,4 @@
+import { ShopModule } from './shop/shop.module';
 import { CoreModule } from './core/core.module';
 import { NavBarComponent } from './core/nav-bar/nav-bar.component';
 import { BrowserModule } from '@angular/platform-browser';
@@ -17,7 +18,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    CoreModule
+    CoreModule,
+    ShopModule
   ],
   providers: [],
   bootstrap: [AppComponent]
